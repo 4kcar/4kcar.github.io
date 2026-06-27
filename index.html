@@ -25,25 +25,33 @@
         z-index: 100;
         background: linear-gradient(135deg, #ff4d8f, #6a5af9);
         text-align: center;
-        padding: 18px 15px;
+        padding: 20px 15px;
         box-shadow: 0 4px 25px rgba(0,0,0,0.4);
     }
 
     .top-bar h1 {
         font-size: 22px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         letter-spacing: 1px;
     }
 
     .top-bar p {
         font-size: 13px;
         opacity: 0.85;
-        margin-bottom: 12px;
+        margin-bottom: 18px;
     }
 
+    /* 按钮容器 */
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* 按钮间距 */
+        flex-wrap: wrap;
+    }
+
+    /* 订阅按钮 */
     .sub-btn {
-        display: inline-block;
-        padding: 10px 36px;
+        padding: 11px 28px;
         background: #000;
         color: #fff;
         border-radius: 25px;
@@ -55,7 +63,24 @@
 
     .sub-btn:hover {
         background: #222;
-        transform: scale(1.06);
+        transform: scale(1.05);
+    }
+
+    /* 客服按钮 */
+    .service-btn {
+        padding: 11px 28px;
+        background: rgba(255,255,255,0.95);
+        color: #ff4d8f;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        transition: all .3s;
+    }
+
+    .service-btn:hover {
+        background: #fff;
+        transform: scale(1.05);
     }
 
     /* ========== 主体 ========== */
@@ -123,13 +148,16 @@
     /* ========== 响应式 ========== */
     @media (max-width: 900px) {
         .gallery { column-count: 3; }
-        .top-bar h1 { font-size: 20px; }
     }
 
     @media (max-width: 600px) {
         .gallery { column-count: 2; }
         .top-bar h1 { font-size: 18px; }
-        .sub-btn { padding: 9px 28px; font-size: 14px; }
+        .btn-group { gap: 10px; }
+        .sub-btn, .service-btn {
+            padding: 10px 22px;
+            font-size: 14px;
+        }
     }
 
     /* ========== 页脚 ========== */
@@ -148,10 +176,18 @@
 <div class="top-bar">
     <h1>🚗 车老板舞蹈视频库 · 4KCAR</h1>
     <p>精选高清舞蹈 · 独家内容 · 每周更新</p>
-    <!-- ⬇️ 这里改成你的微信名 -->
-    <a class="sub-btn" href="weixin://dl/chat?ticket=CarBoss">
-        ➕ 点击订阅 / 加微信
-    </a>
+
+    <div class="btn-group">
+        <!-- ⬇️ 订阅按钮（可改成 B站/频道链接） -->
+        <a class="sub-btn" href="https://space.bilibili.com/你的UID" target="_blank">
+            🚀 点击订阅
+        </a>
+
+        <!-- ⬇️ 微信客服按钮（改成你的微信名） -->
+        <a class="service-btn" href="weixin://dl/chat?ticket=CarBoss">
+            💬 微信客服
+        </a>
+    </div>
 </div>
 
 <div class="container">
@@ -161,7 +197,6 @@
     <!-- 图片瀑布流 -->
     <div class="gallery">
 
-        <!-- ⬇️ 复制这一段就能加一张图 -->
         <div class="gallery-item">
             <img src="https://picsum.photos/400/600?random=1" alt="预览1">
             <div class="info">
