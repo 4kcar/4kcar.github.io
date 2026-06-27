@@ -18,204 +18,220 @@
         color: #fff;
     }
 
-    header {
-        padding: 40px 20px;
-        text-align: center;
+    /* ========== 顶部订阅栏 ========== */
+    .top-bar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
         background: linear-gradient(135deg, #ff4d8f, #6a5af9);
+        text-align: center;
+        padding: 18px 15px;
+        box-shadow: 0 4px 25px rgba(0,0,0,0.4);
     }
 
-    header h1 {
-        font-size: 26px;
+    .top-bar h1 {
+        font-size: 22px;
         margin-bottom: 10px;
+        letter-spacing: 1px;
     }
 
-    header p {
-        font-size: 14px;
-        opacity: 0.9;
+    .top-bar p {
+        font-size: 13px;
+        opacity: 0.85;
+        margin-bottom: 12px;
     }
 
+    .sub-btn {
+        display: inline-block;
+        padding: 10px 36px;
+        background: #000;
+        color: #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        transition: all .3s;
+    }
+
+    .sub-btn:hover {
+        background: #222;
+        transform: scale(1.06);
+    }
+
+    /* ========== 主体 ========== */
     .container {
-        max-width: 1100px;
+        max-width: 1200px;
         margin: auto;
-        padding: 40px 20px;
+        padding: 30px 15px;
     }
 
     .section-title {
         font-size: 20px;
         margin-bottom: 20px;
+        padding-left: 12px;
         border-left: 4px solid #ff4d8f;
-        padding-left: 10px;
     }
 
-    .dance-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
+    /* ========== 瀑布流图片墙 ========== */
+    .gallery {
+        column-count: 4;
+        column-gap: 14px;
     }
 
-    .card {
-        background: #1c1c1c;
-        border-radius: 12px;
+    .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 14px;
+        border-radius: 14px;
         overflow: hidden;
-        transition: transform .2s;
-    }
-
-    .card:hover {
-        transform: translateY(-6px);
-    }
-
-    .card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-    }
-
-    .card-body {
-        padding: 16px;
-    }
-
-    .card-body h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
-
-    .card-body p {
-        font-size: 13px;
-        color: #bbb;
-        line-height: 1.5;
-        margin-bottom: 12px;
-    }
-
-    .price {
-        color: #ff4d8f;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 12px;
-    }
-
-    .buy-btn {
-        display: inline-block;
-        width: 100%;
-        padding: 10px;
-        text-align: center;
-        background: linear-gradient(135deg, #ff4d8f, #6a5af9);
-        border-radius: 8px;
-        color: #fff;
-        font-size: 14px;
-        text-decoration: none;
+        background: #1c1c1c;
+        position: relative;
         cursor: pointer;
     }
 
-    .buy-btn:hover {
-        opacity: 0.9;
+    .gallery-item img {
+        width: 100%;
+        display: block;
+        transition: transform .4s;
     }
 
-    .anchor {
-        display: flex;
-        gap: 20px;
-        background: #1c1c1c;
-        padding: 20px;
-        border-radius: 12px;
-        align-items: center;
-        margin-top: 20px;
+    .gallery-item:hover img {
+        transform: scale(1.06);
     }
 
-    .anchor img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
+    /* 悬浮信息 */
+    .info {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 12px 10px 10px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.85));
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity .3s;
     }
 
-    .anchor-info h3 {
-        font-size: 18px;
-        margin-bottom: 8px;
+    .info span {
+        display: block;
+        margin-top: 2px;
+        color: #ff4d8f;
+        font-weight: bold;
     }
 
-    .anchor-info p {
-        font-size: 13px;
-        color: #bbb;
-        line-height: 1.6;
+    .gallery-item:hover .info {
+        opacity: 1;
     }
 
+    /* ========== 响应式 ========== */
+    @media (max-width: 900px) {
+        .gallery { column-count: 3; }
+        .top-bar h1 { font-size: 20px; }
+    }
+
+    @media (max-width: 600px) {
+        .gallery { column-count: 2; }
+        .top-bar h1 { font-size: 18px; }
+        .sub-btn { padding: 9px 28px; font-size: 14px; }
+    }
+
+    /* ========== 页脚 ========== */
     footer {
         text-align: center;
         padding: 30px 20px;
         font-size: 12px;
-        color: #666;
-    }
-
-    footer a {
-        color: #888;
-        text-decoration: none;
+        color: #555;
     }
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- 顶部订阅栏 -->
+<div class="top-bar">
     <h1>🚗 车老板舞蹈视频库 · 4KCAR</h1>
-    <p>精选高清舞蹈 · 独家内容 · 支持在线观看</p>
-</header>
+    <p>精选高清舞蹈 · 独家内容 · 每周更新</p>
+    <!-- ⬇️ 这里改成你的微信名 -->
+    <a class="sub-btn" href="weixin://dl/chat?ticket=CarBoss">
+        ➕ 点击订阅 / 加微信
+    </a>
+</div>
 
 <div class="container">
 
-    <div class="section-title">🎬 热门舞蹈</div>
+    <div class="section-title">🎬 全部舞蹈预览</div>
 
-    <div class="dance-list">
+    <!-- 图片瀑布流 -->
+    <div class="gallery">
 
-        <div class="card">
-            <img src="https://picsum.photos/400/300?random=1" alt="舞蹈封面">
-            <div class="card-body">
-                <h3>【车老板】热辣爵士舞</h3>
-                <p>时长：3分20秒 · 1080P高清 · 原创编舞</p>
-                <div class="price">¥9.9</div>
-                <a class="buy-btn" href="#">立即购买</a>
+        <!-- ⬇️ 复制这一段就能加一张图 -->
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/600?random=1" alt="预览1">
+            <div class="info">
+                热辣爵士舞
+                <span>¥9.9</span>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://picsum.photos/400/300?random=2" alt="舞蹈封面">
-            <div class="card-body">
-                <h3>【车老板】K-pop翻跳</h3>
-                <p>时长：4分10秒 · 多机位 · 含教学分解</p>
-                <div class="price">¥12.9</div>
-                <a class="buy-btn" href="#">立即购买</a>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/550?random=2" alt="预览2">
+            <div class="info">
+                K-pop翻跳
+                <span>¥12.9</span>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://picsum.photos/400/300?random=3" alt="舞蹈封面">
-            <div class="card-body">
-                <h3>【车老板】氛围感宅舞</h3>
-                <p>时长：5分00秒 · 4K超清 · 限时折扣</p>
-                <div class="price">¥15.9</div>
-                <a class="buy-btn" href="#">立即购买</a>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/650?random=3" alt="预览3">
+            <div class="info">
+                氛围感宅舞
+                <span>¥15.9</span>
             </div>
         </div>
 
-    </div>
-
-    <div class="section-title" style="margin-top:50px">🌟 关于车老板</div>
-
-    <div class="anchor">
-        <img src="https://picsum.photos/200/200?random=4" alt="车老板">
-        <div class="anchor-info">
-            <h3>车老板（4KCAR）</h3>
-            <p>
-                舞蹈区人气主播，擅长爵士、K-pop、街舞。<br/>
-                全网粉丝 50W+，原创舞蹈作品 200+。<br/>
-                每周更新，支持定制编舞 & 私教课程。
-            </p>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/500?random=4" alt="预览4">
+            <div class="info">
+                性感爵士
+                <span>¥9.9</span>
+            </div>
         </div>
-    </div>
 
-</div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/700?random=5" alt="预览5">
+            <div class="info">
+                街舞Battle
+                <span>¥12.9</span>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/580?random=6" alt="预览6">
+            <div class="info">
+                甜酷编舞
+                <span>¥9.9</span>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/620?random=7" alt="预览7">
+            <div class="info">
+                拉丁风情
+                <span>¥15.9</span>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://picsum.photos/400/540?random=8" alt="预览8">
+            <div class="info">
+                韩舞翻跳
+                <span>¥12.9</span>
+            </div>
+        </div>
+
+    </div><!-- end gallery -->
+
+</div><!-- end container -->
 
 <footer>
-    <p>© 2025 4KCAR · 车老板舞蹈视频库</p>
-    <p>购买前请仔细阅读 <a href="#">用户协议</a> · 虚拟商品不支持退款</p>
+    © 2025 4KCAR · 车老板舞蹈视频库 · 虚拟商品不支持退款
 </footer>
 
 </body>
