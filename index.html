@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>车老板舞蹈视频库 · 4KCAR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+        background: #0f0f0f;
+        color: #fff;
+    }
+
+    header {
+        padding: 40px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #ff4d8f, #6a5af9);
+    }
+
+    header h1 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        border-left: 4px solid #ff4d8f;
+        padding-left: 10px;
+    }
+
+    .dance-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: #1c1c1c;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform .2s;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .card-body h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .card-body p {
+        font-size: 13px;
+        color: #bbb;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .price {
+        color: #ff4d8f;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    .buy-btn {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background: linear-gradient(135deg, #ff4d8f, #6a5af9);
+        border-radius: 8px;
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .buy-btn:hover {
+        opacity: 0.9;
+    }
+
+    .anchor {
+        display: flex;
+        gap: 20px;
+        background: #1c1c1c;
+        padding: 20px;
+        border-radius: 12px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .anchor img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .anchor-info h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .anchor-info p {
+        font-size: 13px;
+        color: #bbb;
+        line-height: 1.6;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 12px;
+        color: #666;
+    }
+
+    footer a {
+        color: #888;
+        text-decoration: none;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚗 车老板舞蹈视频库 · 4KCAR</h1>
+    <p>精选高清舞蹈 · 独家内容 · 支持在线观看</p>
+</header>
+
+<div class="container">
+
+    <div class="section-title">🎬 热门舞蹈</div>
+
+    <div class="dance-list">
+
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=1" alt="舞蹈封面">
+            <div class="card-body">
+                <h3>【车老板】热辣爵士舞</h3>
+                <p>时长：3分20秒 · 1080P高清 · 原创编舞</p>
+                <div class="price">¥9.9</div>
+                <a class="buy-btn" href="#">立即购买</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=2" alt="舞蹈封面">
+            <div class="card-body">
+                <h3>【车老板】K-pop翻跳</h3>
+                <p>时长：4分10秒 · 多机位 · 含教学分解</p>
+                <div class="price">¥12.9</div>
+                <a class="buy-btn" href="#">立即购买</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=3" alt="舞蹈封面">
+            <div class="card-body">
+                <h3>【车老板】氛围感宅舞</h3>
+                <p>时长：5分00秒 · 4K超清 · 限时折扣</p>
+                <div class="price">¥15.9</div>
+                <a class="buy-btn" href="#">立即购买</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section-title" style="margin-top:50px">🌟 关于车老板</div>
+
+    <div class="anchor">
+        <img src="https://picsum.photos/200/200?random=4" alt="车老板">
+        <div class="anchor-info">
+            <h3>车老板（4KCAR）</h3>
+            <p>
+                舞蹈区人气主播，擅长爵士、K-pop、街舞。<br/>
+                全网粉丝 50W+，原创舞蹈作品 200+。<br/>
+                每周更新，支持定制编舞 & 私教课程。
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2025 4KCAR · 车老板舞蹈视频库</p>
+    <p>购买前请仔细阅读 <a href="#">用户协议</a> · 虚拟商品不支持退款</p>
+</footer>
+
+</body>
+</html>
